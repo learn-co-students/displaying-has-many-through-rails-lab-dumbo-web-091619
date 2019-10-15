@@ -1,0 +1,16 @@
+<h1><%= @doctor.name %></h1>
+
+<h3>Department: </h3>
+<br>
+<%= @doctor.department %>
+
+<h3>Appointments: </h3>
+<br>
+<ul>
+    <% @doctor.appointments.each do |apt| %>
+    <li>
+    <%= apt.appointment_datetime.to_formatted_s(:long) %>
+    <%= link_to apt.patient.name, patient_path(apt.patient) %>
+    </li>
+    <% end %>
+</ul>

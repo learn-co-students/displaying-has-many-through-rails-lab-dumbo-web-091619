@@ -1,0 +1,12 @@
+<h1>Appointment</h1>
+
+<h3>Date:</h3>
+<%= @apt.appointment_datetime.to_formatted_s(:long)%>
+<br>
+
+<h3>Patient:</h3>
+<%= link_to @apt.patient.name, @apt.patient %>
+<br>
+
+<h3>Doctor:</h3>
+<%= link_to @apt.doctor.name, @apt.doctor %>
