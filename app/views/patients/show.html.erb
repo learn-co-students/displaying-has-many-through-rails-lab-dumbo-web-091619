@@ -1,0 +1,12 @@
+<h1>About This Patient:</h1>
+<label>Name: </label>
+<%= @patient.name %>
+<br><br>
+<label>Appointments: </label>
+<ul>
+<% @patient.appointments.each do |appointment| %>
+    <li>Time: <%= appointment.appointment_time %></li>
+    <li>Doctor: <%= link_to appointment.doctor_name, doctor_path(appointment.doctor_id) %></li>
+    <br>
+<% end %>
+</ul>
